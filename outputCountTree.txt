@@ -1,0 +1,37 @@
+PS C:\Users\tomlc\jest_testing_basics-master\jest_testing_basics> npm test
+
+> jest_testing_basics@1.0.0 test C:\Users\tomlc\jest_testing_basics-master\jest_testing_basics        
+> jest
+
+ FAIL  ./countTree.test.js
+  √ Count node function exists (3 ms)
+  √ Count node in a binary tree: (1 ms)
+  √ Count node in a binary tree:
+  × Count node in a binary tree: (3 ms)
+  √ Count node in a binary tree:
+  √ Count node in a binary tree:
+  √ Count node in a binary tree: (1 ms)
+  √ Count node in a binary tree:
+  √ Count node in a binary tree:
+
+  ● Count node in a binary tree:
+
+    expect(received).toEqual(expected) // deep equality
+
+    Expected: 1
+    Received: 5
+
+      236 |     test('Count node in a binary tree:', () => {
+      237 |         inputArray = countTree(inStrArray[i]);
+    > 238 |         expect(inputArray).toEqual(inStrArrayResults[i]);
+          |                            ^
+      239 |     });
+      240 | }
+
+      at Object.<anonymous> (countTree.test.js:238:28)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 passed, 9 total
+Snapshots:   0 total
+Time:        2.51 s
+Ran all test suites.
