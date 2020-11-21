@@ -1,6 +1,3 @@
-// Name: Tommy Cao
-// Date: 6/9/20
-// Description: Implementation of winner calculation of TicTacToe.
 // Given a 3x3 matrix of a completed tic-tac-toe game, 
 // create a function that returns whether the game 
 // is a win for "X", "O", or a "Draw", where "X" and "O" 
@@ -20,12 +17,21 @@ var calculateWinner = ticTacToe => {
       const newticTacToe = [...ticTacToe[0], 
                             ...ticTacToe[1], 
                             ...ticTacToe[2]];
+    //console.log(newticTacToe);
 
     // Change "E" to null
     newticTacToe.forEach(function(item, i) { if (item == "E") newticTacToe[i] = null; });
+    //console.log(newticTacToe);
 
     for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];    
+        //console.log(lines[i]);
+        const [a, b, c] = lines[i];
+        // console.log([a, b, c]);
+        // console.log(i, newticTacToe[a]);
+        // console.log(i, newticTacToe[b]);  
+        // console.log(i, newticTacToe[c]);      
+        // console.log(i, (newticTacToe[a] === newticTacToe[b]));
+        // console.log(i, (newticTacToe[a] === newticTacToe[c]));      
       if (newticTacToe[a] && 
          (newticTacToe[a] === newticTacToe[b]) && 
          (newticTacToe[a] === newticTacToe[c])) {
@@ -34,47 +40,46 @@ var calculateWinner = ticTacToe => {
     }
     return null; // draw
 }
+ticTacToe =
+  [[["O", "O", "E"],
+    ["E", "X", "O"],
+    ["X", "X", "X"]], // "X"
 
-// ticTacToe =
-//   [[["O", "O", "E"],
-//     ["E", "X", "O"],
-//     ["X", "X", "X"]], // Winner: "X"
+   [["X", "O", "X"],
+    ["O", "X", "O"],
+    ["O", "X", "X"]], // "X"
 
-//    [["X", "O", "X"],
-//     ["O", "X", "O"],
-//     ["O", "X", "X"]], // Winner: "X"
+   [["O", "O", "O"],
+    ["O", "X", "X"],
+    ["E", "X", "X"]], // "O"
 
-//    [["O", "O", "O"],
-//     ["O", "X", "X"],
-//     ["E", "X", "X"]], // Winner: "O"
+   [["O", "X", "X"],
+    ["O", "O", "O"],
+    ["E", "X", "X"]], // "O"
 
-//    [["O", "X", "X"],
-//     ["O", "O", "O"],
-//     ["E", "X", "X"]], // Winner: "O"
+   [["X", "X", "O"],
+    ["O", "O", "X"],
+    ["X", "X", "O"]], // null
 
-//    [["X", "X", "O"],
-//     ["O", "O", "X"],
-//     ["X", "X", "O"]], // Winner: null (draw)
-
-//    [["O", "X", "X"],
-//     ["E", "X", "X"],   
-//     ["O", "O", "O"]], // Winner: "O"
+   [["O", "X", "X"],
+    ["E", "X", "X"],   
+    ["O", "O", "O"]], // "O"
      
-//    [["E", "O", "X"],
-//     ["O", "E", "X"],
-//     ["O", "E", "X"]], // Winner: "X"
+   [["E", "O", "X"],
+    ["O", "E", "X"],
+    ["O", "E", "X"]], // "X"
 
-//    [["X", "O", "E"],
-//     ["X", "O", "E"],
-//     ["E", "O", "X"]], // Winner: "O"
+   [["X", "O", "E"],
+    ["X", "O", "E"],
+    ["E", "O", "X"]], // "O"
 
-//    [["X", "X", "O"],
-//     ["X", "O", "O"],
-//     ["X", "O", "X"]], // Winner: "X"
+   [["X", "X", "O"],
+    ["X", "O", "O"],
+    ["X", "O", "X"]], // "X"
 
-//    [["X", "X", "O"],
-//     ["O", "O", "X"],
-//     ["X", "X", "O"]]]; // Winner: null (draw)
+   [["X", "X", "O"],
+    ["O", "O", "X"],
+    ["X", "X", "O"]]];  // null
 
 // let result, i;
 // for (i=0; i < ticTacToe.length; i++) {

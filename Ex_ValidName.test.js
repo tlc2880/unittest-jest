@@ -1,12 +1,11 @@
 // Name: Tommy Cao
-// Date: 8/12/20
-// Description: This is the automated Jest unit test of the Ex_ValidName.js function.
+// Date: 6/9/20
 
 const validName = require('./Ex_ValidName');
 
-let result;
+let inputArray;
 
-const inStrArray = [
+const nameArray = [
     "H. Wells", // true
     "Wells", // false
     "H. G. Wells", // true
@@ -52,18 +51,19 @@ const inStrArray = [
 
 test('validName function exists', () => {
     expect(validName("Wells")).toBeDefined();
-});
+  });
 
-for (let i=0; i < inStrArray.length; i++) {
-    test('Valid Name unit test function:', () => {
-        result = validName(inStrArray[i].toString());
+
+for (let i=0; i<40; i++) {
+    test('validName test function for true or false', () => {
+        inputArray = validName(nameArray[i].toString());
         if ((i % 2) === 0) { // even numbers are true
-            console.log ('Passed, '+i+', In: '+ inStrArray[i]+ '; Assert: True')
-            expect(result).toEqual(true);
+                expect(inputArray).toEqual(true);
         } 
         else { // odd numbers are false
-            console.log ('Failed, '+i+', In: '+ inStrArray[i]+ '; Assert: False')
-            expect(result).not.toEqual(true);
+                expect(inputArray).toEqual(false);
+                //console.log(i, inputArray);
         }
     });
 }
+
